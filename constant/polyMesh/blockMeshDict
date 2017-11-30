@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-convertToMeters 0.1;
+convertToMeters 0.001;
 
 vertices
 (
@@ -58,12 +58,12 @@ nz6  244;//28.05*nz3/1.15
 
 blocks
 (
-    hex (0 1 5 4 3 2 6 7        ) ($nz1 1 $nz4) simpleGrading (1 1 1)//area4
-    hex (4 5 9 8 7 6 10 11      ) ($nz1 1 $nz5) simpleGrading (1 1 1)//area3
-    hex (8 9 13 12 11 10 14 15  ) ($nz1 1 $nz3) simpleGrading (1 1 1)//area2
-    hex (12 13 17 16 15 14 18 19) ($nz1 1 $nz6) simpleGrading (1 1 1)//area1
-    hex (20 0 4 22 21 3 7 23    ) ($nz2 1 $nz4) simpleGrading (1 1 1)//area9
-    hex (24 8 12 26 25 11 15 27 ) ($nz2 1 $nz3) simpleGrading (1 1 1)//area8
+    hex (0 1 5 4 3 2 6 7        ) ($nz1 $nz4 1) simpleGrading (1 1 1)//area4
+    hex (4 5 9 8 7 6 10 11      ) ($nz1 $nz5 1) simpleGrading (1 1 1)//area3
+    hex (8 9 13 12 11 10 14 15  ) ($nz1 $nz3 1) simpleGrading (1 1 1)//area2
+    hex (12 13 17 16 15 14 18 19) ($nz1 $nz6 1) simpleGrading (1 1 1)//area1
+    hex (20 0 4 22 21 3 7 23    ) ($nz2 $nz4 1) simpleGrading (1 1 1)//area9
+    hex (24 8 12 26 25 11 15 27 ) ($nz2 $nz3 1) simpleGrading (1 1 1)//area8
 );
 	
 edges
@@ -90,23 +90,27 @@ boundary
             (27 25 24 26)
         );
     }
-/*
+
     outlet
     {
         type wall;
         faces
         (
-            (17 18 2 1)
+            (17 13 14 18)
+            (13 9 10 14 )
+            (9 5 6 10   )
+            (5 1 2 6    )
         );
     }
-*/
+
 
     axis
     {
         type wall;
         faces
         (
-          //  (20 21 2 1)
+             (20 21 3 0)
+	     (0 3 2 1  )
         );
     }
 
@@ -124,21 +128,27 @@ boundary
         );
     }
 
-/*
+
     frontAndBack
     {
         type wall;
         faces
         (
-            (16 0 1 17)
-            (22 20 0 4)
-	    (26 24 8 12)
-	    (19 3 2 18)
+            (16 12 13 17)
+            (12 8 9 13  )
+	    (8 4 5 9    )
+	    (4 0 1 5    )
+            (22 20 0 4  )
+	    (26 24 8 12 )
+	    (19 15 14 18)
+	    (15 11 10 14)
+	    (11 7 6 10  )
+	    (7 3 2 6    )
 	    (23 21 3 7)
 	    (27 25 11 15)
         );
     }
-*/
+
 );
 
 mergePatchPairs
