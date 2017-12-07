@@ -106,7 +106,7 @@ boundary
 
     axis
     {
-        type patch;
+        type symmetryPlane;
         faces
         (
              (20 21 3 0)

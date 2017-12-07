@@ -38,7 +38,8 @@ boundaryField
     
     axis
     {
-        type            zeroGradient;
+        //type            zeroGradient;
+        type            symmetryPlane;
     }
     
      wall
