@@ -75,7 +75,7 @@ boundary
 
    inlet1
     {
-        type wall;
+        type patch;
         faces
         (
             (23 21 20 22)
@@ -84,7 +84,7 @@ boundary
 
     inlet2
     {
-        type wall;
+        type patch;
         faces
         (
             (27 25 24 26)
@@ -93,7 +93,7 @@ boundary
 
     outlet
     {
-        type wall;
+        type patch;
         faces
         (
             (17 13 14 18)
@@ -106,7 +106,7 @@ boundary
 
     axis
     {
-        type wall;
+        type patch;
         faces
         (
              (20 21 3 0)
@@ -122,29 +122,29 @@ boundary
             (19 16 17 18)
 	    (19 15 12 16)
 	    (15 27 26 12)
-	    (11 25 24 8)
-	    (11 7 4 8)
-	    (7 23 22 4)
+	    (11 25 24  8)
+	    (11 7  4   8)
+	    (7  23 22  4)
         );
     }
 
 
     frontAndBack
     {
-        type wall;
+        type empty;
         faces
         (
             (16 12 13 17)
-            (12 8 9 13  )
-	    (8 4 5 9    )
-	    (4 0 1 5    )
-            (22 20 0 4  )
-	    (26 24 8 12 )
+            (12 8  9  13)
+	    (8  4  5   9)
+	    (4  0  1   5)
+            (22 20 0   4)
+	    (26 24 8  12)
 	    (19 15 14 18)
 	    (15 11 10 14)
-	    (11 7 6 10  )
-	    (7 3 2 6    )
-	    (23 21 3 7)
+	    (11 7  6  10)
+	    (7  3  2   6)
+	    (23 21  3  7)
 	    (27 25 11 15)
         );
     }

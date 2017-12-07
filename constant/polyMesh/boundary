@@ -19,29 +19,25 @@ FoamFile
 (
     inlet1
     {
-        type            wall;
-        inGroups        1(wall);
+        type            patch;
         nFaces          5;
         startFace       52178;
     }
     inlet2
     {
-        type            wall;
-        inGroups        1(wall);
+        type            patch;
         nFaces          10;
         startFace       52183;
     }
     outlet
     {
-        type            wall;
-        inGroups        1(wall);
+        type            patch;
         nFaces          262;
         startFace       52193;
     }
     axis
     {
-        type            wall;
-        inGroups        1(wall);
+        type            patch;
         nFaces          105;
         startFace       52455;
     }
@@ -54,8 +50,8 @@ FoamFile
     }
     frontAndBack
     {
-        type            wall;
-        inGroups        1(wall);
+        type            empty;
+        inGroups        1(empty);
         nFaces          52550;
         startFace       52922;
     }
