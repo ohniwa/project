@@ -1,0 +1,19 @@
+species
+(
+    O2
+    H2O
+    N2
+    H2
+);
+
+reactions
+{
+    methaneReaction
+    {
+        type     irreversibleArrheniusReaction;
+        reaction "2H2 + O2 = 2H2O";
+        A        1.8e13;　
+        beta     0;
+        Ta       1.762e7;
+    }
+}

@@ -15,7 +15,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     icoFoam;
+application     reactingFoam;
 
 startFrom       startTime;
 
@@ -25,11 +25,11 @@ stopAt          endTime;
 
 endTime         0.5;
 
-deltaT          10e-6;
+deltaT          1e-6;
 
-writeControl    timeStep;
+writeControl    adjustableRunTime;
 
-writeInterval   50;
+writeInterval   0.05;
 
 purgeWrite      0;
 
@@ -44,6 +44,10 @@ timeFormat      general;
 timePrecision   6;
 
 runTimeModifiable true;
+
+adjustTimeStep  yes;
+
+maxCo           0.4;
 
 
 // ************************************************************************* //
